@@ -6,6 +6,7 @@ class Player:
         self.position = None
         self.money = 1500  # Standard starting money in Monopoly
         self.in_jail = False
+        self.jail_turns = 0  # Track how many turns a player has been in jail
         self.net_worth = 0
         self.properties = []
 
