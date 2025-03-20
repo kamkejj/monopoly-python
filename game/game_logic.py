@@ -6,6 +6,10 @@ from models.player import Player
 class Game:
     def __init__(self, board: Board):
         self.board = board
+        # Dictionary to track landing spots: {property_name: count}
+        self.landing_spots = {}
+        # Dictionary to track dice combinations: {(dice1, dice2): count}
+        self.dice_combinations = {}
 
     def game_start(self):
         return self.board.start
@@ -21,6 +25,11 @@ class Game:
 
         # Get current property
         current_property = player.position.value
+        
+        # Track landing spots (except for Go To Jail which is tracked in go_to_jail method)
+        if current_property.name != "Go To Jail":
+            property_name = current_property.name
+            self.landing_spots[property_name] = self.landing_spots.get(property_name, 0) + 1
 
         # Check if player landed on Go To Jail
         if current_property.name == "Go To Jail":
@@ -42,6 +51,10 @@ class Game:
         player.jail_turns = 0  # Reset jail turns counter
         print(f"{player.name} was sent to Jail!")
         
+        # Track landing on Jail (via Go To Jail)
+        property_name = "Jail"
+        self.landing_spots[property_name] = self.landing_spots.get(property_name, 0) + 1
+        
         # Player loses their turn when sent to jail
         return False
         
@@ -49,6 +62,17 @@ class Game:
         """Simulate rolling two dice and return the sum."""
         dice1 = random.randint(1, 6)
         dice2 = random.randint(1, 6)
+        
+        # Track dice combinations (normalize so that (1,6) and (6,1) are the same)
+        # For doubles, keep the order the same
+        if dice1 == dice2:
+            dice_combo = (dice1, dice2)
+        else:
+            # Sort the dice values to normalize the combination
+            dice_combo = tuple(sorted([dice1, dice2]))
+            
+        self.dice_combinations[dice_combo] = self.dice_combinations.get(dice_combo, 0) + 1
+        
         return dice1, dice2, dice1 + dice2
         
     def player_turn(self, player: Player):
@@ -126,3 +150,11 @@ class Game:
         
         # Return the dice values, current property, whether a double was rolled, and if turn continues
         return dice1, dice2, dice_roll, current_property, rolled_double, continue_turn
+        
+    def get_landing_stats(self):
+        """Return statistics about landing spots."""
+        return self.landing_spots
+    
+    def get_dice_stats(self):
+        """Return statistics about dice combinations."""
+        return self.dice_combinations

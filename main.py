@@ -50,3 +50,37 @@ for round in range(num_rounds):
             else:
                 # No double or player was sent to jail, turn is over
                 taking_turn = False
+
+# Display game statistics
+print("\n===== GAME STATISTICS =====")
+
+# Display landing spot statistics
+print("\nLanding Spot Statistics:")
+print("-----------------------")
+landing_stats = game.get_landing_stats()
+sorted_landing_stats = sorted(landing_stats.items(), key=lambda x: x[1], reverse=True)
+for property_name, count in sorted_landing_stats:
+    print(f"{property_name}: {count} times")
+
+# Display dice roll statistics
+print("\nDice Roll Statistics:")
+print("--------------------")
+dice_stats = game.get_dice_stats()
+sorted_dice_stats = sorted(dice_stats.items(), key=lambda x: x[1], reverse=True)
+for dice_combo, count in sorted_dice_stats:
+    # For non-doubles, show as "1+6" instead of "1-6"
+    if dice_combo[0] == dice_combo[1]:
+        print(f"Double {dice_combo[0]}s (sum {dice_combo[0] + dice_combo[1]}): {count} times")
+    else:
+        print(f"Dice {dice_combo[0]}+{dice_combo[1]} (sum {dice_combo[0] + dice_combo[1]}): {count} times")
+
+# Display summary statistics
+print("\nSummary Statistics:")
+print("-----------------")
+total_rolls = sum(dice_stats.values())
+print(f"Total dice rolls: {total_rolls}")
+
+# Calculate doubles statistics
+doubles_count = sum(count for combo, count in dice_stats.items() if combo[0] == combo[1])
+doubles_percentage = (doubles_count / total_rolls) * 100 if total_rolls > 0 else 0
+print(f"Doubles rolled: {doubles_count} times ({doubles_percentage:.2f}%)")
