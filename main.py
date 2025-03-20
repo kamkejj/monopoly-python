@@ -1,3 +1,6 @@
+import csv
+import os
+import datetime
 from models.board import Board
 from models.player import Player
 from game.game_logic import Game
@@ -54,6 +57,9 @@ for round in range(num_rounds):
 # Display game statistics
 print("\n===== GAME STATISTICS =====")
 
+# Get current timestamp for the game
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 # Display landing spot statistics
 print("\nLanding Spot Statistics:")
 print("-----------------------")
@@ -84,3 +90,55 @@ print(f"Total dice rolls: {total_rolls}")
 doubles_count = sum(count for combo, count in dice_stats.items() if combo[0] == combo[1])
 doubles_percentage = (doubles_count / total_rolls) * 100 if total_rolls > 0 else 0
 print(f"Doubles rolled: {doubles_count} times ({doubles_percentage:.2f}%)")
+
+# Save statistics to CSV files
+# Create stats/data directory if it doesn't exist
+os.makedirs("stats/data", exist_ok=True)
+
+# Save property statistics to CSV
+property_csv_path = "stats/data/property_stats.csv"
+property_file_exists = os.path.isfile(property_csv_path)
+
+with open(property_csv_path, 'a', newline='') as csvfile:
+    fieldnames = ['timestamp', 'rounds', 'players', 'property_name', 'count']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    
+    # Write header if file doesn't exist
+    if not property_file_exists:
+        writer.writeheader()
+    
+    # Write data for each property
+    for property_name, count in landing_stats.items():
+        writer.writerow({
+            'timestamp': timestamp,
+            'rounds': num_rounds,
+            'players': num_players,
+            'property_name': property_name,
+            'count': count
+        })
+
+# Save dice statistics to CSV
+dice_csv_path = "stats/data/dice_stats.csv"
+dice_file_exists = os.path.isfile(dice_csv_path)
+
+with open(dice_csv_path, 'a', newline='') as csvfile:
+    fieldnames = ['timestamp', 'rounds', 'players', 'dice1', 'dice2', 'sum', 'count']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    
+    # Write header if file doesn't exist
+    if not dice_file_exists:
+        writer.writeheader()
+    
+    # Write data for each dice combination
+    for dice_combo, count in dice_stats.items():
+        writer.writerow({
+            'timestamp': timestamp,
+            'rounds': num_rounds,
+            'players': num_players,
+            'dice1': dice_combo[0],
+            'dice2': dice_combo[1],
+            'sum': dice_combo[0] + dice_combo[1],
+            'count': count
+        })
+
+print("\nStatistics saved to CSV files in the stats folder.")

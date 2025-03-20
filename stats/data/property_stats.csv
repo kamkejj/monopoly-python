@@ -1,0 +1,71 @@
+timestamp,rounds,players,property_name,count
+2025-03-20 08:01:23,500,1,Electric Company,24
+2025-03-20 08:01:23,500,1,Free Parking,19
+2025-03-20 08:01:23,500,1,Indiana Avenue,9
+2025-03-20 08:01:23,500,1,Pacific Avenue,14
+2025-03-20 08:01:23,500,1,Park Place,10
+2025-03-20 08:01:23,500,1,Boardwalk,17
+2025-03-20 08:01:23,500,1,Oriental Avenue,10
+2025-03-20 08:01:23,500,1,New York Avenue,15
+2025-03-20 08:01:23,500,1,Kentucky Avenue,16
+2025-03-20 08:01:23,500,1,North Carolina Avenue,23
+2025-03-20 08:01:23,500,1,Pennsylvania Avenue,11
+2025-03-20 08:01:23,500,1,Reading Railroad,12
+2025-03-20 08:01:23,500,1,Community Chest,45
+2025-03-20 08:01:23,500,1,St. James Place,14
+2025-03-20 08:01:23,500,1,Ventnor Avenue,17
+2025-03-20 08:01:23,500,1,Mediteranean Avenue,15
+2025-03-20 08:01:23,500,1,Connecticut Avenue,16
+2025-03-20 08:01:23,500,1,Illinois Avenue,17
+2025-03-20 08:01:23,500,1,Virginia Avenue,10
+2025-03-20 08:01:23,500,1,B. & O. Railroad,22
+2025-03-20 08:01:23,500,1,Luxury Tax,14
+2025-03-20 08:01:23,500,1,Jail,36
+2025-03-20 08:01:23,500,1,Pennsylvania Railroad,13
+2025-03-20 08:01:23,500,1,Go,14
+2025-03-20 08:01:23,500,1,Tennessee Avenue,23
+2025-03-20 08:01:23,500,1,Chance,21
+2025-03-20 08:01:23,500,1,Atlantic Avenue,16
+2025-03-20 08:01:23,500,1,Baltic Avenue,17
+2025-03-20 08:01:23,500,1,States Avenue,8
+2025-03-20 08:01:23,500,1,Income Tax,11
+2025-03-20 08:01:23,500,1,Water Works,14
+2025-03-20 08:01:23,500,1,Short Line,11
+2025-03-20 08:01:23,500,1,Vermont Avenue,13
+2025-03-20 08:01:23,500,1,Marvin Gardens,8
+2025-03-20 08:01:23,500,1,St. Charles Place,12
+2025-03-20 08:30:08,1000,2,Connecticut Avenue,49
+2025-03-20 08:30:08,1000,2,Reading Railroad,60
+2025-03-20 08:30:08,1000,2,St. James Place,73
+2025-03-20 08:30:08,1000,2,Virginia Avenue,65
+2025-03-20 08:30:08,1000,2,Atlantic Avenue,51
+2025-03-20 08:30:08,1000,2,Tennessee Avenue,67
+2025-03-20 08:30:08,1000,2,Water Works,64
+2025-03-20 08:30:08,1000,2,Luxury Tax,43
+2025-03-20 08:30:08,1000,2,Jail,121
+2025-03-20 08:30:08,1000,2,Short Line,64
+2025-03-20 08:30:08,1000,2,Mediteranean Avenue,47
+2025-03-20 08:30:08,1000,2,Oriental Avenue,49
+2025-03-20 08:30:08,1000,2,B. & O. Railroad,61
+2025-03-20 08:30:08,1000,2,Free Parking,62
+2025-03-20 08:30:08,1000,2,North Carolina Avenue,62
+2025-03-20 08:30:08,1000,2,Community Chest,180
+2025-03-20 08:30:08,1000,2,Baltic Avenue,55
+2025-03-20 08:30:08,1000,2,Go,56
+2025-03-20 08:30:08,1000,2,St. Charles Place,42
+2025-03-20 08:30:08,1000,2,New York Avenue,46
+2025-03-20 08:30:08,1000,2,Illinois Avenue,67
+2025-03-20 08:30:08,1000,2,Pacific Avenue,67
+2025-03-20 08:30:08,1000,2,Ventnor Avenue,58
+2025-03-20 08:30:08,1000,2,States Avenue,47
+2025-03-20 08:30:08,1000,2,Boardwalk,50
+2025-03-20 08:30:08,1000,2,Income Tax,54
+2025-03-20 08:30:08,1000,2,Electric Company,66
+2025-03-20 08:30:08,1000,2,Pennsylvania Avenue,57
+2025-03-20 08:30:08,1000,2,Pennsylvania Railroad,53
+2025-03-20 08:30:08,1000,2,Kentucky Avenue,68
+2025-03-20 08:30:08,1000,2,Indiana Avenue,71
+2025-03-20 08:30:08,1000,2,Chance,118
+2025-03-20 08:30:08,1000,2,Marvin Gardens,65
+2025-03-20 08:30:08,1000,2,Vermont Avenue,62
+2025-03-20 08:30:08,1000,2,Park Place,53
